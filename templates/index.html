@@ -10,13 +10,27 @@
             background-color: rgba(151, 128, 128, 0.688);
             padding: 20px;
         }
+        .environment-div {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>System Monitoring</h1>
+        
+        <!-- Environment Display -->
+        <div class="environment-div">
+            Environment: {{ env }}
+        </div>
+        
         <div id="cpu-gauge"></div>
         <div id="mem-gauge"></div>
+        
         {% if message %}
         <div class="alert alert-danger">{{ message }}</div>
         {% endif %}
