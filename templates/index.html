@@ -10,13 +10,27 @@
             background-color: rgba(151, 128, 128, 0.688);
             padding: 20px;
         }
+        .environment-div {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>System Monitoring</h1>
+        
+        <!-- Environment Display -->
+        <div class="Dev-env">
+            This is Dev env
+        </div>
+        
         <div id="cpu-gauge"></div>
         <div id="mem-gauge"></div>
+        
         {% if message %}
         <div class="alert alert-danger">{{ message }}</div>
         {% endif %}
@@ -33,9 +47,9 @@
                 borderwidth: 2,
                 bordercolor: "#ccc",
                 steps: [
-                    { range: [0, 50], color: "#d9f0a3" },
-                    { range: [50, 85], color: "#ffeb84" },
-                    { range: [85, 100], color: "#ff5f5f" }
+                   { range: [0, 50], color: "#c5e1a5" },  // pale green
+                   { range: [50, 85], color: "#fff59d" }, // pale yellow
+                   { range: [85, 100], color: "#f48fb1" } 
                 ],
                 threshold: {
                     line: { color: "red", width: 4 },
